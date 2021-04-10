@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface ProductService {
     List<Product> findAll();
+
+    List<Product> findWithFilter(String from, String to, String onStock);
 }
