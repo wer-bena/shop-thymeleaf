@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Shop</title>
     <link rel="stylesheet" th:href="@{/css/uikit.min.css}">
+    <link rel="stylesheet" th:href="@{/style.css}">
     <script th:src="@{/js/uikit.min.js}"></script>
     <script th:src="@{/js/uikit-icons.min.js}"></script>
 </head>
@@ -35,8 +36,39 @@
         </ul>
     </div>
 </div>
-    <div class="uk-container uk-margin-large-top" uk-height-viewport="expand: true"></div>
+    <div class="uk-container uk-margin-large-top" uk-height-viewport="expand: true">
 
+<div class="uk-grid-large" uk-grid="masonry: true">
+    <div class="uk-width-1-4 uk-padding-small gray-card-border">
+    </div>
+    <div class="uk-width-3-4">
+        <div>
+            <div th:each="product : ${productList}" class="uk-card uk-card-hover uk-margin-medium gray-card-border product-card" uk-grid>
+                <div class="uk-card-media-left uk-cover-container uk-width-1-5">
+                    <img th:src="${product.imageUrl}" uk-cover>
+                    <canvas width="" height=""></canvas>
+                </div>
+                <div class="uk-width-4-5">
+                    <div class="uk-card-body">
+                        <div class="uk-flex">
+                            <div class="uk-width-5-6">
+                                <h4 th:text="${product.name}"><a class="uk-link-text"></a></h4>
+                                <p th:text="${#strings.substring(product.description, 0, 50)} + '...'"></p>
+                                <span th:text="|${product.quantity}szt.|" class="uk-badge uk-background-secondary"></span>
+                            </div>
+                            <div class="uk-width-1-6 uk-text-center">
+                                <div><span th:text="${#numbers.formatDecimal(product.price, 1, 2)} + ' zł'" class="uk-text-large"></span></div>
+                                <a class="uk-icon-button uk-button-secondary uk-margin" uk-icon="cart">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
     <div class="uk-background-secondary uk-margin-top uk-flex uk-flex-middle uk-flex-right footer" style="height: 100px">
         <div class="uk-margin-large-right">
             <span uk-icon="icon: facebook; ratio: 2"></span>
