@@ -1,56 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<html lang="en" xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout(~{::.uk-container})}">
 <head>
-    <meta charset="UTF-8">
-    <title>Shop</title>
-    <link rel="stylesheet" th:href="@{/css/uikit.min.css}">
-    <link rel="stylesheet" th:href="@{/style.css}">
-    <script th:src="@{/js/uikit.min.js}"></script>
-    <script th:src="@{/js/uikit-icons.min.js}"></script>
 </head>
 <body>
 
-<div class="uk-navbar-container uk-background-secondary" uk-navbar>
-    <div class="uk-navbar-center">
-        <ul class="uk-navbar-nav uk-text-large">
-            <li>
-                <a th:href="@{/products}">Zakupy</a>
-            </li>
-            <li>
-                <a th:href="@{/my-products}">Moje przedmioty</a>
-            </li>
-        </ul>
-    </div>
-    <div class="uk-navbar-right">
-        <ul class="uk-navbar-nav">
-            <li>
-                <a class="uk-padding-remove" th:href="@{/shopping-cart}">
-                    <span uk-icon="icon: cart; ratio: 1.5"></span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <span class="uk-badge uk-background-secondary"></span>
-                </a>
-            </li>
-        </ul>
-    </div>
-</div>
-
-<div class="uk-container uk-container-small uk-margin-large-top uk-margin-large-bottom" uk-height-viewport="expand: true">
+<div class="uk-container uk-container-small uk-margin-large-top uk-margin-large-bottom"
+     uk-height-viewport="expand: true">
     <h1 class="uk-heading-2xlarge uk-text-center">404 Error</h1>
     <h1 class="uk-heading-2xlarge uk-text-center">: (</h1>
 </div>
-
-<div class="uk-background-secondary uk-margin-top uk-flex uk-flex-middle uk-flex-right footer" style="height: 100px">
-    <div class="uk-margin-large-right">
-        <span uk-icon="icon: facebook; ratio: 2"></span>
-        <span uk-icon="icon: twitter; ratio: 2"></span>
-        <span uk-icon="icon: instagram; ratio: 2"></span>
-    </div>
-</div>
-
-
 
 </body>
 </html>

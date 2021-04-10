@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div th:fragment="navbar" class="uk-navbar-container uk-background-secondary" uk-navbar>
+    <div class="uk-navbar-center">
+        <ul class="uk-navbar-nav uk-text-large">
+            <li>
+                <a th:href="@{/products}">Zakupy</a>
+            </li>
+            <li>
+                <a th:href="@{/my-products}">Moje przedmioty</a>
+            </li>
+        </ul>
+    </div>
+    <div class="uk-navbar-right">
+        <ul class="uk-navbar-nav">
+            <li>
+                <a class="uk-padding-remove" th:href="@{/shopping-cart}">
+                    <span uk-icon="icon: cart; ratio: 1.5"></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="uk-badge uk-background-secondary"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>
